@@ -55,7 +55,7 @@ class Word2Vec:
         batch_count = self.iter * approx_pair / self.batch_size
         for pos_u, pos_v, neg_samples in self.data.gen_batch():
             i += 1
-            if self.data.sentence_cursor > self.data.sentence_len * self.iter:
+            if i > 13200: ## self.data.sentence_cursor > self.data.sentence_len * self.iter: CAREFUL! REMEMBER TO CHANGE THIS!
                 # reach max iter
                 break
             # train iter
